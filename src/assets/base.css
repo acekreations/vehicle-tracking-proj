@@ -1,0 +1,124 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  /* Colors */
+  --light-blue: #2B2C35;
+  --medium-blue: #1E1F25;
+  --dark-blue: #1A1A1A;
+  --black: #1A1A1A;
+  --white: #F6F6F6;
+  --medium-gray: #A9AEB6;
+  --green: #52FFA2;
+  --yellow: #FFDB5E;
+  --red: #FF715E;
+
+  /* Fonts */
+  --primary-font: "Inter", sans-serif;
+
+  /* Utilities */
+  --br-small: 4px;
+  --br-medium: 8px;
+  --br-large: 16px;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+p,
+.p,
+.small,
+input[type="text"] {
+  font-family: var(--primary-font);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+.h1 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+h2,
+.h2 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+h3,
+.h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+h4,
+.h4 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+p,
+.p,
+input[type="text"] {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.small {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-medium-gray {
+  color: var(--medium-gray);
+}
+
+.bg-green {
+  background-color: var(--green)
+}
+
+.bg-yellow {
+  background-color: var(--yellow)
+}
+
+.bg-red {
+  background-color: var(--red)
+}
+
+.bg-medium-gray {
+  background-color: var(--medium-gray);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
