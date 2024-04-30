@@ -7,6 +7,7 @@
   --black: #1A1A1A;
   --white: #F6F6F6;
   --medium-gray: #A9AEB6;
+  --dark-gray: #4a4c58;
   --green: #52FFA2;
   --yellow: #FFDB5E;
   --red: #FF715E;
@@ -30,6 +31,7 @@ body {
 
 hr {
   border: 1px solid var(--light-blue);
+  margin: 16px 0;
 }
 
 h1,
@@ -88,7 +90,7 @@ p,
 input {
   border-radius: var(--br-medium);
   border: none;
-  background: #4a4c58;
+  background: var(--dark-gray);
   padding: 8px;
   color: var(--white);
   font-weight: 400;
@@ -96,7 +98,7 @@ input {
 }
 
 select {
-  background: #4a4c58;
+  background: var(--dark-gray);
   border: none;
   color: var(--white);
   padding: 8px;
@@ -143,4 +145,21 @@ select {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.slidedown-enter-active,
+.slidedown-leave-active {
+  transition: max-height 0.3s ease-in-out;
+}
+
+.slidedown-enter-to,
+.slidedown-leave-from {
+  overflow: hidden;
+  max-height: 1000px;
+}
+
+.slidedown-enter-from,
+.slidedown-leave-to {
+  overflow: hidden;
+  max-height: 0;
 }

@@ -8,6 +8,9 @@
 	<MapModal v-if="store.mapModal.active" />
 	<main>
 		<Panel type="vehicles" />
+		<div class="logo">
+			<h1>Vehicle Tracker</h1>
+		</div>
 		<Panel type="drivers" />
 	</main>
 </template>
@@ -26,5 +29,19 @@
 		box-sizing: border-box;
 		display: flex;
 		justify-content: space-between;
+		
+		.logo {
+			background-color: var(--medium-blue);
+			padding: 8px 16px;
+			box-shadow: var(--card-shadow);
+			border-radius: 50px;
+			height: auto;
+			margin-bottom: auto;
+			
+			h1 {
+				font-size: 20px;
+				font-family: "Audiowide", sans-serif;	
+			}
+		}
 	}
 </style>

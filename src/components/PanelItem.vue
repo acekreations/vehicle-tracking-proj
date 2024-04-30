@@ -21,10 +21,10 @@
 </script>
 
 <template>
-	<div class="item" ref="item" @click="store.mapModal.open(props.item)">
+	<div class="item" ref="item" @click="store.mapModal.open(props.item, props.type)">
 		<div class="left-col">
-			<h4>{{ props.type === 'vehicles' ? props.item.vehicle : props.item.firstName + ' ' + props.item.lastName }}</h4>
-			<p class="text-medium-gray">{{ props.type === 'vehicles' ? props.item.firstName + ' ' + props.item.lastName :props.item.vehicle }}</p>
+			<h4>{{ props.type === 'vehicles' ? props.item.vehicle : props.item.driver }}</h4>
+			<p class="text-medium-gray">{{ props.type === 'vehicles' ? props.item.driver :props.item.vehicle }}</p>
 			<p class="small text-medium-gray">Near: {{ props.item.location }}</p>
 		</div>
 		<div class="right-col">
@@ -97,6 +97,7 @@
 				width: 40px;
 				height: 46px;
 				margin: 10px 0;
+				position: relative;
 
 				p {
 					font-weight: 700;
