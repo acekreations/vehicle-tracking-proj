@@ -25,6 +25,11 @@ body {
   margin: 0;
   padding: 0;
   color: var(--white);
+  position: relative;
+}
+
+hr {
+  border: 1px solid var(--light-blue);
 }
 
 h1,
@@ -38,7 +43,7 @@ h4,
 p,
 .p,
 .small,
-input[type="text"] {
+input, label {
   font-family: var(--primary-font);
   color: var(--white);
   margin: 0;
@@ -70,8 +75,7 @@ h4,
 }
 
 p,
-.p,
-input[type="text"] {
+.p, label {
   font-weight: 400;
   font-size: 14px;
 }
@@ -79,6 +83,24 @@ input[type="text"] {
 .small {
   font-weight: 400;
   font-size: 12px;
+}
+
+input {
+  border-radius: var(--br-medium);
+  border: none;
+  background: #4a4c58;
+  padding: 8px;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+select {
+  background: #4a4c58;
+  border: none;
+  color: var(--white);
+  padding: 8px;
+  border-radius: var(--br-medium);
 }
 
 .font-bold {

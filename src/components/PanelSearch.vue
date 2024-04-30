@@ -1,30 +1,16 @@
 <script setup>
 	import {
 		ref
-	} from 'vue'
-
-	let sortActive = ref(false);
-
-	function handleSortDropdown() {
-		console.log('click');
-		sortActive.value = !sortActive.value;
-	}
+	} from 'vue';
+	import Dropdown from "./Dropdown.vue";
 </script>
 
 <template>
 	<div class="search">
-		<input type="text" />
-		<img src="./icons/filter.svg" />
+		<input type="text" value="search"/>
 		<div class="icon-container">
-			<img @click="handleSortDropdown" src="./icons/sort.svg" />
-			<Transition name="fade">
-				<div v-if="sortActive" class="dropdown">
-					<p>a-z</p>
-					<p>z-a</p>
-				</div>
-			</Transition>
+			<Dropdown icon="./icons/filter.svg" />
 		</div>
-		<img src="./icons/close.svg" />
 	</div>
 </template>
 
@@ -34,13 +20,10 @@
 		align-items: center;
 		padding: 16px;
 		border-bottom: 1px solid var(--medium-blue);
+		background-color: var(--light-blue);
 
 		input {
 			width: 100%;
-			border-radius: var(--br-medium);
-			border: none;
-			background: #60626F;
-			padding: 8px;
 		}
 
 		img {
@@ -53,18 +36,6 @@
 		.icon-container {
 			position: relative;
 			cursor: pointer;
-
-			.dropdown {
-				background-color: var(--dark-blue);
-				position: absolute;
-				top: 100%;
-				left: 10px;
-				width: 100px;
-				padding: 8px;
-				border-radius: var(--br-medium);
-				border-top-left-radius: 0;
-				box-shadow: var(--card-shadow);
-			}
 		}
 	}
 </style>

@@ -1,12 +1,14 @@
 <script setup>
-	// import HelloWorld from './components/HelloWorld.vue'
-	// import TheWelcome from './components/TheWelcome.vue'
 	import Panel from './components/Panel.vue'
+	import { store } from './store.js'
+	import MapModal from './components/MapModal.vue'
 </script>
 
 <template>
+	<MapModal v-if="store.mapModal.active" />
 	<main>
-		<Panel />
+		<Panel type="vehicles" />
+		<Panel type="drivers" />
 	</main>
 </template>
 
@@ -22,5 +24,7 @@
 		background-repeat: no-repeat;
 		padding: 8px;
 		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
 	}
 </style>
