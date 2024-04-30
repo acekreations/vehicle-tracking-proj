@@ -6,6 +6,14 @@
 	
 	const props = defineProps(['type']);
 	const panelToggle = ref(true);
+	
+	function handleNewItem() {
+		const id = Math.floor(Math.random() * 1000) + 100;
+		const newItem = store.newItem(id);
+		store.mapModal.content = newItem;
+		store.mapModal.active = true;
+		store.mapModal.type = props.type;
+	}
 </script>
 
 <template>
@@ -38,6 +46,11 @@
 						<PanelItem v-for="item in store.data" :key="item.id" :type='props.type' :item='item' />
 					</div>
 				</div>
+			</div>
+		</Transition>
+		<Transition name="fade">
+			<div v-if="panelToggle" class="footer" @click="handleNewItem">
+				<img src="./icons/plus.svg" alt="new"/>
 			</div>
 		</Transition>
 	</div>
@@ -104,6 +117,27 @@
 			box-sizing: border-box;
 			border-bottom-left-radius: var(--br-large);
 			border-bottom-right-radius: var(--br-large);
+		}
+		
+		.footer {
+			background-color: var(--medium-blue);
+			color: var(--white);
+			border-bottom-left-radius: var(--br-large);
+			border-bottom-right-radius: var(--br-large);
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: all 0.2s;
+			
+			&:hover {
+				background-color: var(--light-blue);
+			}
+			
+			img {
+				width: 20px;
+			}
 		}
 	}
 </style>

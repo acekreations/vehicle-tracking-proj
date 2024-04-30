@@ -38,17 +38,21 @@
 		if(props.type === 'vehicles'){
 			store.searchVehicle.results = [];
 			store.data.forEach(function(item){
-				const result = item.vehicle.toLowerCase().match(term.toLowerCase());
-				if(result){
-					store.searchVehicle.results.push(item);
+				if(item.vehicle){
+					const result = item.vehicle.toLowerCase().match(term.toLowerCase());
+					if(result){
+						store.searchVehicle.results.push(item);
+					}
 				}
 			});
 		} else {
 			store.searchDriver.results = [];
 			store.data.forEach(function(item){
-				const result = item.driver.toLowerCase().match(term.toLowerCase());
-				if(result){
-					store.searchDriver.results.push(item);
+				if(item.driver){
+					const result = item.driver.toLowerCase().match(term.toLowerCase());
+					if(result){
+						store.searchDriver.results.push(item);
+					}
 				}
 			});
 		}

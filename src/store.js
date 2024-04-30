@@ -3,6 +3,13 @@ import data from './data/mock-data.json'
 
 export const store = reactive({
   data: data,
+  newItem(id) { 
+    const newItem = {
+      id: id
+    };
+    this.data.push(newItem);
+    return newItem;
+  },
   searchVehicle: {
     term: '',
     filter: null,

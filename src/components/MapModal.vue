@@ -4,7 +4,7 @@
 	
 	onMounted(() => {
 		window.addEventListener('click', function(e){
-			if(!e.target.closest('.map-modal') && !e.target.closest('.item')){
+			if(!e.target.closest('.map-modal') && !e.target.closest('.item') && !e.target.closest('.footer')){
 				store.mapModal.active = false;
 			};
 		});
