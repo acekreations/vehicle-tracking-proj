@@ -17,11 +17,20 @@
 			default:
 				return 'bg-medium-gray';
 		}
-	})
+	});
+	
+	const item = ref(null)
+	function handleActiveClass(){
+		if(store.mapModal.activeItem){
+			store.mapModal.activeItem.classList.remove('active');
+		}
+		store.mapModal.activeItem = item;
+		store.mapModal.activeItem.classList.add('active');
+	}
 </script>
 
 <template>
-	<div class="item" ref="item" @click="store.mapModal.open(props.item, props.type)">
+	<div class="item" ref="item" @click="store.mapModal.open(props.item, props.type); handleActiveClass()">
 		<div class="left-col">
 			<h4>{{ props.type === 'vehicles' ? props.item.vehicle : props.item.driver }}</h4>
 			<p class="text-medium-gray">{{ props.type === 'vehicles' ? props.item.driver :props.item.vehicle }}</p>
@@ -51,6 +60,10 @@
 		margin-bottom: 8px;
 		transition: all 0.2s;
 		cursor: pointer;
+		
+		&.active {
+			background-color: #434658;
+		}
 
 		.left-col {
 			margin-right: 12px;

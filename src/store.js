@@ -26,6 +26,7 @@ export const store = reactive({
     active: false,
     content: null,
     type: null,
+    activeItem: null,
     open(item, type) {
       this.active = true;
       this.content = item;

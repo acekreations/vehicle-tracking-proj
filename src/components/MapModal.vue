@@ -6,6 +6,9 @@
 		window.addEventListener('click', function(e){
 			if(!e.target.closest('.map-modal') && !e.target.closest('.item') && !e.target.closest('.footer')){
 				store.mapModal.active = false;
+				if(store.mapModal.activeItem){
+					store.mapModal.activeItem.classList.remove('active');
+				}
 			};
 		});
 	});
